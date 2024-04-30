@@ -13,11 +13,15 @@ jobs:
     - name: Checkout do repositório
       uses: actions/checkout@v2
 
+    - name: Listar arquivos no diretório
+      run: |
+        ls -l
+
     - name: Transferir HTML para a VM
       uses: appleboy/scp-action@master
       with:
         host: 167.234.230.206 # Endereço IP da sua VM
         username: ubuntu # Nome de usuário da sua VM
         key: ${{ secrets.SSH_PRIVATE_KEY }} # Chave SSH privada
-        source: "C:\\Users\\Usuario\\repositorio\\index.html" # Caminho local completo do arquivo HTML
+        source: "index.html" # Caminho relativo do arquivo HTML (se estiver no diretório de trabalho)
         target: "/var/www/html/" # Caminho na sua VM onde você deseja que o arquivo seja transferido
