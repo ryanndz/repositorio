@@ -19,5 +19,5 @@ jobs:
         host: 167.234.230.206 # Endereço IP da sua VM
         username: ubuntu # Nome de usuário da sua VM
         key: ${{ secrets.SSH_PRIVATE_KEY }} # Chave SSH privada
-        source: "C:\Users\Usuario\repositorio\index.html" # Caminho local completo do arquivo HTML
+        source: "index.html" # Caminho local completo do arquivo HTML
         target: "/var/www/html/" # Caminho na sua VM onde você deseja que o arquivo seja transferido
